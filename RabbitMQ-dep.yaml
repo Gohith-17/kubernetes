@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vproRMQ-Deployment
+  name: vprormq.deployment
   labels:
     app: vprormq
 spec:
@@ -15,7 +15,7 @@ spec:
         app: vprormq
     spec:
       containers:
-        - name: vproRMQ-Container
+        - name: vprormq.container
           image: rabbitmq
           ports:
             - name: vprormq-port
