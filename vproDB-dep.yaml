@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vprodb-deployment
+  name: vprodb
   labels:
     app: vprodb
 spec:
@@ -15,7 +15,7 @@ spec:
         app: vprodb
     spec:
       containers:
-        - name: vprodb-container
+        - name: vprodb
           image: vprofile/vprofiledb:V1
 #          args:
 #           - "--ignore-db-dir=lost+found"

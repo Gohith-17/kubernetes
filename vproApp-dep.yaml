@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vproapp-deployment
+  name: vproapp
   labels:
     app: vproapp
 spec:
@@ -15,7 +15,7 @@ spec:
         app: vproapp
     spec:
       containers:
-        - name: vproapp-container
+        - name: vproapp
           image: vprofile/vprofileapp:V1
           ports:
             - name: vproapp-port
