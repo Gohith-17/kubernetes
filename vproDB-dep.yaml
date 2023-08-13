@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: vprodb
-          image: vprofile/vprofiledb:V1
+          image: gohith/step_docker_db
 #          args:
 #           - "--ignore-db-dir=lost+found"
           volumeMounts:
