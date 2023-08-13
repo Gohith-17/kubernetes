@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vprodb.deployment
+  name: vprodb-deployment
   labels:
     app: vprodb
 spec:
@@ -15,7 +15,7 @@ spec:
         app: vprodb
     spec:
       containers:
-        - name: vprodb.container
+        - name: vprodb-container
           image: vprofile/vprofiledb:V1
 #          args:
 #           - "--ignore-db-dir=lost+found"
@@ -34,12 +34,12 @@ spec:
       nodeSelector:
         zone: us-east-1a
       volumes:
-        - name: vpro.db.data
+        - name: vpro-db-data
           awsElasticBlockStore:
             volumeID: vol-0d079d82dd9183582
             fsType: ext4
       initContainers:
-        - name: busybox.start.exec.stop
+        - name: busybox-start-exec-stop
           image: busybox:latest
           args: ["rm", "-rf", "/var/lib/mysql/lost+found"]
           volumeMounts:
