@@ -17,9 +17,6 @@ spec:
       containers:
         - name: vprodb
           image: gohith/step_docker_db
-          volumeMounts:
-            - name: vpro-db-data
-              mountPath: /var/lib/mysql
           ports:
             - name: vprodb-port
               containerPort: 3306
@@ -31,9 +28,3 @@ spec:
                   key: db-pass
       nodeSelector:
         zone: us-east-1a
-      volumes:
-        - name: vpro-db-data
-          awsElasticBlockStore:
-            volumeID: vol-05d043cedfdeab6ff
-            fsType: ext4
-#
